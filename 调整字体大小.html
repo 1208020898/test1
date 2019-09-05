@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>点击更改字体大小</title>
+  <style type="text/css">
+	*{margin:0;padding:0;}
+	#nav{
+		display:flex;
+	}
+	#nav p{
+		font-size:30px;
+		width:100px;
+		height:40px;
+		line-height:40px;
+		background:purple;
+		cursor:pointer;
+		margin-left:10px;
+		text-align:center;
+		color:white;
+	}
+
+	#context{
+		margin-top:40px;
+		font-size:16px;
+	}
+  </style>
+ </head>
+ <body>
+	<div id="oBox">
+		<div id="nav">
+			<p id="add">+</p>
+			<p id="res">-</p>
+		</div>
+		<div id="context">
+			display:flex 是一种布局方式。它即可以应用于容器中，也可以应用于行内元素。是W3C提出的一种新的方案，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持
+		</div>
+	</div>
+	<script>
+		var add = document.getElementById("add");
+		var res = document.getElementById("res");
+		var context = document.getElementById("context");
+		var index = 16;
+		add.onclick = function(){
+			index++;
+			context.style.fontSize = index + "px";
+		};
+		res.onclick = function(){
+			index--;
+			if(index<8){
+				context.style.fontSize = "8px";
+			}
+			context.style.fontSize = index + "px";
+		}
+	</script>
+ </body>
+</html>
